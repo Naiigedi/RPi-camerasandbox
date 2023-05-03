@@ -15,7 +15,9 @@ elif captureMode == 'full':
     picam2.start_preview(Preview.QTGL)
 
     preview_config = picam2.create_preview_configuration()
-    capture_config = picam2.create_still_configuration({'size': (5608, 2592)})
+    
+    capture_config = picam2.create_still_configuration()
+    capture_config["main"]["size"] = ( 4608, 2592 )
     picam2.configure(preview_config)
 
     picam2.start()
